@@ -5,7 +5,7 @@ import React, {
   isValidElement,
   useEffect,
   useRef,
-  useState
+  useState,
 } from "react";
 import {
   useFloating,
@@ -155,7 +155,7 @@ const Menu = forwardRef<
       }
     }
 
-    const bindMenu = (doc) => {
+    const bindMenu = (doc: Window) => {
       doc.addEventListener("contextmenu", onContextMenu);
       doc.addEventListener("mouseup", onMouseUp);
     }
@@ -174,11 +174,11 @@ const Menu = forwardRef<
     }
   }, [refs, frame]);
 
-  const onChange = (e) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
   }
 
-  const onKeyUp = (e) => {
+  const onKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       setUrl(value+'?x=;_&y=%3Cscript%3Ealert(1)%3C/script%3E')
       setIsOpen(false)
