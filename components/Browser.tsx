@@ -117,7 +117,14 @@ const Menu = forwardRef<
 
     function onContextMenu(e: MouseEvent) {
       e.preventDefault();
-      const {top, left, x, y} = browser?.current?.getBoundingClientRect()
+
+      let rect = {
+        x: 0, y: 0, top: 0, left: 0
+      }
+      if (browser && browser.current) {
+        rect = browser.current.getBoundingClientRect()
+      }
+      const {top, left, x, y} = rect
       refs.setPositionReference({
         getBoundingClientRect() {
           return {
