@@ -160,7 +160,7 @@ const Menu = forwardRef<
       doc.addEventListener("mouseup", onMouseUp);
     }
 
-    if (frame.current) {
+    if (frame.current && frame.current.contentWindow) {
       const doc = frame.current.contentWindow
       frame.current.addEventListener('load', () => {
         bindMenu(doc)
