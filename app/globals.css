@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /*background: linear-gradient(*/
+  /*    to bottom,*/
+  /*    transparent,*/
+  /*    rgb(var(--background-end-rgb))*/
+  /*  )*/
+  /*  rgb(var(--background-start-rgb));*/
+}
+
+.app {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    /*overflow: hidden;*/
+}
+
+.react-grid-item:not(.react-grid-placeholder) {
+    background: #ccc;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1px 1fr;
+    grid-template-columns: 1fr 1px 1fr;
+    /*grid-template-rows: 4fr 1px 0fr;*/
+    /*grid-template-columns: 2fr 1px 0fr;*/
+}
+
+.gutter-col {
+    grid-row: 1/-1;
+    cursor: col-resize;
+    background: #ccc;
+}
+
+.gutter-col-1 {
+    grid-column: 2;
+}
+
+.gutter-row {
+    grid-column: 1/-1;
+    cursor: row-resize;
+}
+
+.gutter-row-1 {
+    grid-row: 2;
+}
+
+.gutter-col, .gutter-row {
+    background: #ccc;
+    position: relative;
+}
+
+.gutter-col:active::after, .gutter-col:hover::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: #cffafe;
+    left: 50%;
+    transform: translateX(-50%);
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+
+.gutter-row:active::after, .gutter-row:hover::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #cffafe;
+    top: 50%;
+    transform: translateY(-50%);
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+
+.browser {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))
+    )
+}
+
+.browser iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
