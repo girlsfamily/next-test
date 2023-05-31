@@ -73,8 +73,8 @@ const Menu = forwardRef<
     ) as Array<string | null>
   );
   const allowMouseUpCloseRef = useRef(false);
-  const frame = useRef(null)
-  const browser = useRef(null)
+  const frame = useRef<HTMLIFrameElement>(null)
+  const browser = useRef<HTMLDivElement>(null)
 
   const { refs, floatingStyles, context } = useFloating({
     open: isOpen,
