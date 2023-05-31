@@ -186,7 +186,7 @@ const Menu = forwardRef<
   }
 
   const reload = () => {
-    frame.current.contentWindow.location.reload()
+    frame?.current?.contentWindow.location.reload()
   }
 
   return (
