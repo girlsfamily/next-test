@@ -31,7 +31,7 @@ export const MenuItem = forwardRef<
   reload?: boolean
   reset?: boolean
 }
->(({ children, disabled, ...props }, ref) => {
+>(function MenuItem ({ children, disabled, ...props }, ref) {
   return (
     <button
       {...props}
@@ -57,11 +57,10 @@ interface Props {
   label?: string;
   nested?: boolean;
 }
-
-export const Menu = forwardRef<
+const Menu = forwardRef<
   HTMLButtonElement,
   Props & React.HTMLProps<HTMLButtonElement>
->(({ children }, forwardedRef) => {
+>(function Menu ({ children }, forwardedRef) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState('')
