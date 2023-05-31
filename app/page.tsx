@@ -57,6 +57,7 @@ export default function Home() {
         gridTemplateColumns={gridTemplateColumns}
         gridTemplateRows={gridTemplateRows}
         onDrag={handleDrag}
+        // @ts-ignore
         render={({getGridProps, getGutterProps}) => {
           return (
             <div className="grid" {...getGridProps()}>
