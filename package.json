@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudflare/next-on-pages": "^1.0.1",
     "@floating-ui/react": "^0.24.2",
     "@radix-ui/colors": "^0.1.8",
     "@types/node": "20.2.5",
