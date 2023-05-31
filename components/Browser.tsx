@@ -258,10 +258,10 @@ const Menu = forwardRef<
 export const Browser = ({ max, min, reset }: {max: () => void, min: () => void, reset: () => void}) => {
   return <Menu>
     <MenuItem reload>Reload{' '}</MenuItem>
-    <MenuItem reset>Reset Page{' '}</MenuItem>
+    <MenuItem reset>Close{' '}</MenuItem>
     <MenuItem onClick={() => max()}>Max{' '}</MenuItem>
     <MenuItem onClick={() => min()}>Min{' '}</MenuItem>
-    <MenuItem onClick={() => reset()}>Reset Layout{' '}</MenuItem>
+    <MenuItem onClick={() => reset()}>Reset{' '}</MenuItem>
   </Menu>
 }
 
